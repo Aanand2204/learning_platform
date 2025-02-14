@@ -1,13 +1,69 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard - Learning Platform</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
-    <h2>User Dashboard</h2>
+    
+   <!-- Navbar -->
+   <nav class="navbar">
+    <h2>Learning Hub</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="quiz.html">Quizzes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html" class="btn">Login</a>
+    </div>
+</nav>
+    
     <div id="user-info"></div>
+    <!-- Dashboard Header -->
+    <header class="page-header">
+        <h1>Your Learning Dashboard</h1>
+        <p>Track your progress and manage your courses efficiently.</p>
+    </header>
+
+    <!-- User Progress Section -->
+    <section class="dashboard-content">
+        <div class="progress-card">
+            <h3>Machine Learning</h3>
+            <p>Progress: 75%</p>
+            <progress value="75" max="100"></progress>
+        </div>
+        <div class="progress-card">
+            <h3>Web Development</h3>
+            <p>Progress: 50%</p>
+            <progress value="50" max="100"></progress>
+        </div>
+        <div class="progress-card">
+            <h3>Data Science</h3>
+            <p>Progress: 30%</p>
+            <progress value="30" max="100"></progress>
+        </div>
+    </section>
+
+    <!-- Recent Activity -->
+    <section class="recent-activity">
+        <h2>Recent Activity</h2>
+        <ul>
+            <li>Completed "Supervised Learning Basics" - 2 days ago</li>
+            <li>Started "JavaScript Advanced Concepts" - 5 days ago</li>
+            <li>Attempted Quiz on Data Visualization - 1 week ago</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Learning Platform. All Rights Reserved.</p>
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch("/api/user")

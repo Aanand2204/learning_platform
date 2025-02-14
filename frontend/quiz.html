@@ -4,24 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/quiz.css">
 </head>
 <body>
-    <h2>Quiz</h2>
-    <div id="quiz-container"></div>
-    <button id="submit-quiz">Submit</button>
+     <!-- Navbar -->
+     <nav class="navbar">
+        <h2>Learning Hub</h2>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="quiz.html">Quizzes</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="btn">Login</a>
+        </div>
+    </nav>
+
+    <!-- <section class="hero"> -->
+    <div class="quiz-container">
+        <h2>Quiz</h2>
+        <div id="quiz-questions"></div>
+        <button id="submit-quiz">Submit</button>
+    </div>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <p>&copy; 2024 Learning Platform. All Rights Reserved.</p>
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch("/api/quiz")
                 .then(response => response.json())
                 .then(data => {
-                    const quizContainer = document.getElementById("quiz-container");
+                    const quizContainer = document.getElementById("quiz-questions");
                     data.questions.forEach((question, index) => {
                         const questionElement = document.createElement("div");
-                        questionElement.innerHTML = `<p>${question.text}</p>`;
-                        question.options.forEach(option => {
-                            questionElement.innerHTML += `<input type='radio' name='q${index}' value='${option}'> ${option}<br>`;
-                        });
+                        questionElement.classList.add("question");
+                        questionElement.innerHTML = `
+                            <p>${index + 1}. ${question.text}</p>
+                            <div class="options">
+                                ${question.options.map(option => 
+                                    `<label><input type='radio' name='q${index}' value='${option}'> ${option}</label>`
+                                ).join("")}
+                            </div>
+                        `;
                         quizContainer.appendChild(questionElement);
                     });
                 })

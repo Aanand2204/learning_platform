@@ -4,21 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>Learning Hub</h2>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="quiz.html">Quizzes</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="btn">Login</a>
+        </div>
     </nav>
-    <div id="content">
-        <h1>Welcome to the Learning Platform</h1>
-        <div id="courses"></div>
-    </div>
-    <script src="script.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Welcome to Your Learning Journey</h1>
+            <p>Explore a variety of courses and enhance your skills with personalized recommendations.</p>
+            <a href="courses.html" class="btn">Browse Courses</a>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses">
+        <h2 style="margin: 1rem;">Popular Courses</h2>
+        <div class="course-list">
+            <div class="card">
+                <h3>Machine Learning</h3>
+                <p>Master the fundamentals of ML with hands-on projects.</p>
+                <a href="course-details.html" class="btn">View Course</a>
+            </div>
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Build stunning websites with HTML, CSS, and JavaScript.</p>
+                <a href="course-details.html" class="btn">View Course</a>
+            </div>
+            <div class="card">
+                <h3>Data Science</h3>
+                <p>Learn data analysis, visualization, and AI techniques.</p>
+                <a href="course-details.html" class="btn">View Course</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Learning Platform. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
